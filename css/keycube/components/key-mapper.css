@@ -1,0 +1,86 @@
+:root {
+	--keycube-key-mapper-font: var(--primary-font);
+	--keycube-key-mapper-text-color: var(--text-color);
+	--keycube-key-mapper-background-color: var(--primary-dark-color);
+}
+
+keycube-key-mapper {
+	position: absolute;
+	left: 50%;
+	bottom: -20%;
+	z-index: 30;
+	display: block;
+	width: 50%;
+	height: 17%;
+	font-family: var(--keycube-key-mapper-font);
+	color: var(--keycube-key-mapper-text-color);
+	background-color: var(--keycube-key-mapper-background-color);
+	border-radius: 30px;
+	outline: none;
+	transform: translateX(-50%);
+	transition: bottom 1.25s, color 0.15s ease-out, background 0.15s ease-out;
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+
+keycube-key-mapper.open {
+	bottom: 2%;
+}
+
+keycube-key-mapper.alternative {
+	left: unset;
+	right: -15%;
+	bottom: 2%;
+	width: 15%;
+	height: 96%;
+	transform: none;
+	transition: right 1.25s, color 0.15s ease-out, background 0.15s ease-out;
+}
+
+keycube-key-mapper.alternative.open {
+	right: 2%;
+}
+
+keycube-key-mapper>keycube-keys {
+	left: 32px;
+	top: 5%;
+	bottom: 5%;
+	width: calc(100% - 64px);
+}
+
+keycube-key-mapper .key-mapper-key {
+	width: 6.5%;
+	height: 40%;
+	margin: 0.5%;
+}
+
+keycube-key-mapper.alternative .key-mapper-key {
+	width: 40%;
+	height: 6.5%;
+}
+
+keycube-key-mapper>page-nav-button {
+	position: relative;
+	width: 32px;
+	height: 100%;
+	cursor: pointer;
+}
+
+keycube-key-mapper>page-nav-button#prev-page-button {
+	float: left;
+}
+
+keycube-key-mapper>page-nav-button#next-page-button {
+	float: right;
+}
+
+keycube-key-mapper>page-nav-button>h2 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}

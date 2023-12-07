@@ -1,0 +1,41 @@
+:root {
+	--keycube-key-font: var(--primary-font);
+	--keycube-key-text-color: var(--text-color);
+	--keycube-key-background-color: var(--primary-color);
+	--keycube-key-background-color-hover: var(--primary-hover-color);
+	--keycube-key-background-color-active: var(--primary-active-color);
+}
+
+keycube-keys {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+keycube-key {
+	display: flex;
+	font-family: var(--keycube-key-font);
+    text-align: center;
+	color: var(--keycube-key-text-color);
+	background-color: var(--keycube-key-background-color);
+	border-radius: 8px;
+	transition: color 0.15s ease-out, background 0.15s ease-out;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+}
+
+keycube-key:hover, keycube-key.hover {
+	background-color: var(--keycube-key-background-color-hover);
+	transform: scale(1.1);
+}
+
+keycube-key:active, keycube-key.active {
+	background-color: var(--keycube-key-background-color-active);
+}

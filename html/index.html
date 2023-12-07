@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+		<!-- General Purpose Style -->
+		<link rel="stylesheet" href="../css/styles.css" />
+
+		<!-- Keycube Style -->
+		<link rel="stylesheet" href="../css/keycube/keycube.css" />
+		<link rel="stylesheet" href="../css/keycube/components/text.css" />
+		<link rel="stylesheet" href="../css/keycube/components/net.css" />
+		<link rel="stylesheet" href="../css/keycube/components/3d.css" />
+		<link rel="stylesheet" href="../css/keycube/components/key-mapper.css" />
+		<link rel="stylesheet" href="../css/keycube/components/layer-selector.css" />
+
+		<!-- Bootstrap Icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+		<!-- General Webpage Scripts -->
+		<script type="text/javascript" src="../js/options-menu.js"></script>
+		<script type="text/javascript" src="../js/view-navigation.js" defer></script>
+		<script type="text/javascript" src="../js/start-view.js" defer></script>
+		<title>Keycube</title>
+	</head>
+	<body>
+		<!-- Theme Button (moved to Options Menu)
+		<button class="top-left" onclick="toggleTheme()">
+			<h2 class="bi bi-circle-half"></h2>
+		</button>
+		-->
+
+		<!-- Options Menu -->
+		<options-menu class="top-left">
+			<div>
+				<ul>
+					<li id="menu-import-json">Import Json</li>
+					<li id="menu-export-json">Export Json</li>
+					<li id="menu-view-json">View Json</li>
+					<li id="menu-toggle-theme">Toggle Theme</li>
+				</ul>
+				<keycube-layer-selector style="transform: translateX(-15px); display: none;"></keycube-layer-selector>
+			</div>
+
+			<button onclick="OptionsMenu.open(this)">
+				<h1 class="bi bi-list"></h1>
+			</button>
+		</options-menu>
+
+		<!-- Start View -->
+		<start-view></start-view>
+
+		<!-- Main Views -->
+		<keycube-text id="keycube-text-view" style="left: -50%;">
+			Ceci est une zone de texte
+			<br />
+			(non)
+		</keycube-text>
+
+		<keycube-net id="keycube-net-view" style="left: 50%; display: none;"></keycube-net>
+
+		<keycube-3d id="keycube-3d-view" style="left: 150%;">
+			Ceci est une vue 3d !
+			<br />
+			(non)
+		</keycube-3d>
+
+		<!-- Key Mapper Popup -->
+
+		<keycube-key-mapper class="alternative" style="display: none;"></keycube-key-mapper>
+
+		<!-- View Navigation Buttons -->
+		<button id="prev-view-btn" class="view-nav-btn" onclick="prevView()">
+			<h2 class="bi bi-chevron-left"></h2>
+		</button>
+
+		<button id="next-view-btn" class="view-nav-btn" onclick="nextView()">
+			<h2 class="bi bi-chevron-right"></h2>
+		</button>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="../js/keycube/keycube.js" async></script>
+		<script type="text/javascript" src="../js/keycube/keycode.js" async></script>
+		<script type="text/javascript" src="../js/keycube/components/net.js" async></script>
+		<script type="text/javascript" src="../js/keycube/components/key-mapper.js" async></script>
+		<script type="text/javascript" src="../js/keycube/components/layer-selector.js" async></script>
+	</body>
+</html>

@@ -1,7 +1,8 @@
 {
   "version": 1,
-  "description": "My first Keycube layout (see keycodes : https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md)",
-  "keyboard": "keycube/9-buttons",
+  "keycube-id": "keycube_3x3",
+  "name": "My Keycube 3x3",
+  "description": "My Keycube 3x3 layout (see keycodes : https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md)",
   "north-layers": [
     [
       "KC_A",

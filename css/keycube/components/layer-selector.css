@@ -1,0 +1,33 @@
+:root {
+	--keycube-layer-selector-font: var(--primary-font);
+	--keycube-layer-selector-text-color: var(--text-color);
+	--keycube-layer-selector-background-color: var(--primary-color);
+	--keycube-layer-selector-background-color-hover: var(--primary-hover-color);
+	--keycube-layer-selector-background-color-active: var(--primary-active-color);
+}
+
+keycube-layer {
+	position: absolute;
+}
+
+keycube-layer-selector>select-button {
+	position: relative;
+	z-index: 10;
+	padding: 10px 14px;
+	margin: 4px;
+	font-family: var(--keycube-layer-selector-font);
+	color: var(--keycube-layer-selector-text-color);
+	background-color: var(--keycube-layer-selector-background-color);
+	border-radius: 80px;
+	transition: color 0.15s ease-out, background 0.15s ease-out;
+	cursor: pointer;
+}
+
+keycube-layer-selector>select-button:hover, keycube-layer-selector>select-button.hover {
+	background-color: var(--keycube-layer-selector-background-color-hover);
+	transform: scale(1.1);
+}
+
+keycube-layer-selector>select-button:active, keycube-layer-selector>select-button.active {
+	background-color: var(--keycube-layer-selector-background-color-active);
+}
