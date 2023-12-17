@@ -1,8 +1,8 @@
 {
   "version": 1,
   "keycube-id": "keycube_3x3",
-  "name": "My Keycube 3x3",
-  "description": "My Keycube 3x3 layout (see keycodes : https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md)",
+  "name": "My Keycube 3x3 Key Layout",
+  "description": "My Keycube 3x3 Key layout (see keycodes : https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md)",
   "north-layers": [
     [
       "KC_A",
@@ -13,7 +13,7 @@
       "KC_F",
       "KC_G",
       "KC_H",
-	  "KC_I"
+      "KC_I"
     ],
     [
       "KC_J",
@@ -24,7 +24,7 @@
       "KC_O",
       "KC_P",
       "KC_Q",
-	  "KC_R"
+      "KC_R"
     ],
     [
       "KC_S",
@@ -35,7 +35,7 @@
       "KC_X",
       "KC_Y",
       "KC_Z",
-	  "KC_0"
+      "KC_0"
     ],
     [
       "KC_1",
@@ -46,7 +46,7 @@
       "KC_6",
       "KC_7",
       "KC_8",
-	  "KC_9"
+      "KC_9"
     ]
   ],
   "west-layers": [
@@ -59,7 +59,7 @@
       "KC_F",
       "KC_G",
       "KC_H",
-	  "KC_I"
+      "KC_I"
     ],
     [
       "KC_J",
@@ -70,7 +70,7 @@
       "KC_O",
       "KC_P",
       "KC_Q",
-	  "KC_R"
+      "KC_R"
     ],
     [
       "KC_S",
@@ -81,7 +81,7 @@
       "KC_X",
       "KC_Y",
       "KC_Z",
-	  "KC_0"
+      "KC_0"
     ],
     [
       "KC_1",
@@ -92,7 +92,7 @@
       "KC_6",
       "KC_7",
       "KC_8",
-	  "KC_9"
+      "KC_9"
     ]
   ],
   "middle-layers": [
@@ -105,7 +105,7 @@
       "KC_F",
       "KC_G",
       "KC_H",
-	  "KC_I"
+      "KC_I"
     ],
     [
       "KC_J",
@@ -116,7 +116,7 @@
       "KC_O",
       "KC_P",
       "KC_Q",
-	  "KC_R"
+      "KC_R"
     ],
     [
       "KC_S",
@@ -127,7 +127,7 @@
       "KC_X",
       "KC_Y",
       "KC_Z",
-	  "KC_0"
+      "KC_0"
     ],
     [
       "KC_1",
@@ -138,7 +138,7 @@
       "KC_6",
       "KC_7",
       "KC_8",
-	  "KC_9"
+      "KC_9"
     ]
   ],
   "east-layers": [
@@ -151,7 +151,7 @@
       "KC_F",
       "KC_G",
       "KC_H",
-	  "KC_I"
+      "KC_I"
     ],
     [
       "KC_J",
@@ -162,7 +162,7 @@
       "KC_O",
       "KC_P",
       "KC_Q",
-	  "KC_R"
+      "KC_R"
     ],
     [
       "KC_S",
@@ -173,7 +173,7 @@
       "KC_X",
       "KC_Y",
       "KC_Z",
-	  "KC_0"
+      "KC_0"
     ],
     [
       "KC_1",
@@ -184,7 +184,7 @@
       "KC_6",
       "KC_7",
       "KC_8",
-	  "KC_9"
+      "KC_9"
     ]
   ],
   "south-layers": [
@@ -197,7 +197,7 @@
       "KC_F",
       "KC_G",
       "KC_H",
-	  "KC_I"
+      "KC_I"
     ],
     [
       "KC_J",
@@ -208,7 +208,7 @@
       "KC_O",
       "KC_P",
       "KC_Q",
-	  "KC_R"
+      "KC_R"
     ],
     [
       "KC_S",
@@ -219,7 +219,7 @@
       "KC_X",
       "KC_Y",
       "KC_Z",
-	  "KC_0"
+      "KC_0"
     ],
     [
       "KC_1",
@@ -230,7 +230,8 @@
       "KC_6",
       "KC_7",
       "KC_8",
-	  "KC_9"
+      "KC_9"
     ]
-  ]
+  ],
+  "activeLayer": 0
 }

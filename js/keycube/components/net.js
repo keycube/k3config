@@ -2,6 +2,7 @@ const KeycubeNet =
 {
 	keycubeLayout: null,
 	netElements: null,
+	faceIndicatorLoaded: false,
 
 	loadComponent: function (keycubeLayout) {
 		if (!KeycubeLayout.isPrototypeOf(keycubeLayout)) {
@@ -66,7 +67,48 @@ const KeycubeNet =
 				}
 
 			}
+		}
+	},
 
+	loadFaceIndicatorElements: function () {
+		if (!KeycubeLayout.isPrototypeOf(this.keycubeLayout)) {
+			return;
+		}
+
+		for (let netElement of this.netElements) {
+			for (let face in keycubeFaces) {
+				let faceElement = document.createElement('face-indicator');
+
+				faceElement.classList.add(face);
+				netElement.appendChild(faceElement);
+			}
+		}
+
+		this.faceIndicatorLoaded = true;
+	},
+
+	unloadFaceIndicatorElements: function () {
+		if (!KeycubeLayout.isPrototypeOf(this.keycubeLayout)) {
+			return;
+		}
+
+		for (let netElement of this.netElements) {
+			let faceIndicatorElements = netElement.getElementsByTagName('face-indicator');
+
+			while (faceIndicatorElements.length > 0) {
+				faceIndicatorElements[0].remove();
+			}
+		}
+
+		this.faceIndicatorLoaded = false;
+	},
+
+	toggleFaceIndicator: function () {
+		if (this.faceIndicatorLoaded) {
+			this.unloadFaceIndicatorElements();
+		}
+		else {
+			this.loadFaceIndicatorElements();
 		}
 	},
 

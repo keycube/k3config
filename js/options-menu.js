@@ -50,13 +50,14 @@ function importKeycubeLayout() {
 
 		fileReader = new FileReader();
 		fileReader.onload = (event) => {
-			const content = event.target.result;
-			const keycubeLayout = KeycubeLayout.createFromJson(content);
+			let content = event.target.result;
+			let keycubeLayout = KeycubeLayout.createFromJson(content);
 
-			if (keycubeLayout) {
-				keycubeLayout.loadKeycubeNet();
-			}
-
+			StartView.loadOption(() => {
+				KeycubeNet.loadComponent(keycubeLayout);
+				KeycubeLayerSelector.loadComponent(keycubeLayout);
+				KeycubeKeyMapper.loadComponent(keycubeLayout);
+			});
 		};
 
 		fileReader.readAsText(fileList[0]);
@@ -87,6 +88,15 @@ function exportKeycubeLayout() {
 	document.body.removeChild(element);
 }
 
+/* Face Indicator */
+function toggleFaceIndicator() {
+
+	if (typeof(KeycubeNet) == 'object'
+	&&  typeof(KeycubeNet.toggleFaceIndicator) == 'function') {
+		KeycubeNet.toggleFaceIndicator();
+	}
+}
+
 /* Load & toggle Theme */
 
 function loadTheme() {
@@ -101,7 +111,7 @@ function loadTheme() {
 }
 
 function toggleTheme() {
-	const root = document.documentElement;
+	let root = document.documentElement;
 	let theme = root.getAttribute('theme');
 
 	if (!theme) {
@@ -121,10 +131,16 @@ loadTheme();
 
 /* Options Menu Click Event Listeners */
 
-
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById('menu-import-json').addEventListener('click', importKeycubeLayout);
+	document.getElementById('menu-import-json').addEventListener('mousedown', (event) => { event.preventDefault() });
+
 	document.getElementById('menu-export-json').addEventListener('click', exportKeycubeLayout);
-	//document.getElementById('menu-view-json').addEventListener('click', viewJson);
+	document.getElementById('menu-export-json').addEventListener('mousedown', (event) => { event.preventDefault() });
+
+	document.getElementById('menu-togge-face-indicator').addEventListener('click', toggleFaceIndicator);
+	document.getElementById('menu-togge-face-indicator').addEventListener('mousedown', (event) => { event.preventDefault() });
+
 	document.getElementById('menu-toggle-theme').addEventListener('click', toggleTheme);
+	document.getElementById('menu-toggle-theme').addEventListener('mousedown', (event) => { event.preventDefault() });
 });

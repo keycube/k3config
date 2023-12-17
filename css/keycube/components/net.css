@@ -3,7 +3,7 @@ keycube-net {
 	left: 50%;
 	top: 50%;
 	z-index: 20;
-	width: 40%;
+	width: 100%;
 	aspect-ratio: 1 / 1;
 	transform: translate(-50%, -50%);
 	transition: left 2s, color 0.15s ease-out, background 0.15s ease-out;
@@ -12,6 +12,7 @@ keycube-net {
 keycube-net>keycube-keys {
 	right: 35%;
 	top: 35%;
+	z-index: 25;
 	width: 30%;
 	height: 30%;
 }
@@ -62,4 +63,51 @@ keycube-net>keycube-keys>keycube-key.keycube_5x5 {
 keycube-net>keycube-keys>keycube-key.keycube_6x6 {
 	width: 15%;
 	height: 15%;
+}
+
+keycube-net>face-indicator {
+	position: absolute;
+	right: 35%;
+	top: 35%;
+	display: flex;
+	width: 30%;
+	height: 30%;
+	font-size: xx-large;
+	font-weight: bold;
+	justify-content: center;
+	align-items: center;
+}
+
+keycube-net>face-indicator.north-layers {
+	transform: translateY(-180%);
+}
+
+keycube-net>face-indicator.west-layers {
+	transform: translateX(-190%);
+}
+
+keycube-net>face-indicator.middle-layers {}
+
+keycube-net>face-indicator.east-layers {
+	transform: translateX(190%);
+}
+
+keycube-net>face-indicator.south-layers {
+	transform: translateY(180%);
+}
+
+keycube-net>face-indicator.north-layers:before {
+	content: "North";
+}
+
+keycube-net>face-indicator.west-layers:before {
+	content: "West";
+}
+
+keycube-net>face-indicator.east-layers:before {
+	content: "East";
+}
+
+keycube-net>face-indicator.south-layers:before {
+	content: "South";
 }

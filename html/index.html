@@ -26,6 +26,9 @@
 		<title>Keycube</title>
 	</head>
 	<body>
+		<!-- Screen Warning -->
+		<screen-warning></screen-warning>
+
 		<!-- Theme Button (moved to Options Menu)
 		<button class="top-left" onclick="toggleTheme()">
 			<h2 class="bi bi-circle-half"></h2>
@@ -35,16 +38,16 @@
 		<!-- Options Menu -->
 		<options-menu class="top-left">
 			<div>
-				<ul>
+				<ul style="transform: translate(-40px, 30px);">
 					<li id="menu-import-json">Import Json</li>
 					<li id="menu-export-json">Export Json</li>
-					<li id="menu-view-json">View Json</li>
+					<li id="menu-togge-face-indicator">Toggle Face Indicator</li>
 					<li id="menu-toggle-theme">Toggle Theme</li>
 				</ul>
-				<keycube-layer-selector style="transform: translateX(-15px); display: none;"></keycube-layer-selector>
+				<keycube-layer-selector style="position: absolute; transform: translate(-40px, 30px); display: none;"></keycube-layer-selector>
 			</div>
 
-			<button onclick="OptionsMenu.open(this)">
+			<button onclick="OptionsMenu.open(this)" onmousedown="event.preventDefault()">
 				<h1 class="bi bi-list"></h1>
 			</button>
 		</options-menu>
@@ -53,30 +56,29 @@
 		<start-view></start-view>
 
 		<!-- Main Views -->
-		<keycube-text id="keycube-text-view" style="left: -50%;">
+		<keycube-text id="keycube-text-view" style="width: 40%; left: -50%;">
 			Ceci est une zone de texte
 			<br />
 			(non)
 		</keycube-text>
 
-		<keycube-net id="keycube-net-view" style="left: 50%; display: none;"></keycube-net>
+		<keycube-net id="keycube-net-view" style="width: 40%; left: 50%; display: none;"></keycube-net>
 
-		<keycube-3d id="keycube-3d-view" style="left: 150%;">
+		<keycube-3d id="keycube-3d-view" style="width: 40%; left: 150%;">
 			Ceci est une vue 3d !
 			<br />
 			(non)
 		</keycube-3d>
 
 		<!-- Key Mapper Popup -->
-
 		<keycube-key-mapper class="alternative" style="display: none;"></keycube-key-mapper>
 
 		<!-- View Navigation Buttons -->
-		<button id="prev-view-btn" class="view-nav-btn" onclick="prevView()">
+		<button id="prev-view-btn" style="display: none;" class="view-nav-btn" onclick="prevView()">
 			<h2 class="bi bi-chevron-left"></h2>
 		</button>
 
-		<button id="next-view-btn" class="view-nav-btn" onclick="nextView()">
+		<button id="next-view-btn" style="display: none;" class="view-nav-btn" onclick="nextView()">
 			<h2 class="bi bi-chevron-right"></h2>
 		</button>
 

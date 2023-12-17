@@ -49,6 +49,19 @@ const KeycubeKeyMapper =
 		this.addKeycubeNetEvents();
 	},
 
+	refreshElements: function () {
+		if (!KeycubeLayout.isPrototypeOf(this.keycubeLayout)) {
+			return;
+		}
+
+		for (let keyMapperElement of this.keyMapperElements) {
+			keyMapperElement.setAttribute('tabindex', -1);
+			keyMapperElement.style.display = null;
+		}
+
+		this.loadKeyPageElements();
+	},
+
 	loadKeyPageElements: function () {
 		for (let keyMapperElement of this.keyMapperElements) {
 			keyMapperElement.innerHTML = '';
@@ -169,7 +182,7 @@ const KeycubeKeyMapper =
 			? this.activeKeyPage - 1
 			: this.keyPages.length - 1;
 
-		this.loadKeyPageElements();
+		this.refreshElements();
 	},
 
 	nextKeyPage: function (event) {
@@ -179,7 +192,7 @@ const KeycubeKeyMapper =
 			? this.activeKeyPage + 1
 			: 0;
 
-		this.loadKeyPageElements();
+		this.refreshElements();
 	},
 
 	unloadComponent: function () {

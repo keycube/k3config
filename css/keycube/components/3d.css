@@ -10,7 +10,7 @@ keycube-3d {
 	left: 50%;
 	z-index: 20;
 	display: flex;
-	width: 40%;
+	width: 100%;
 	aspect-ratio: 1 / 1;
 	font-family: var(--keycube-3d-font);
     text-align: center;

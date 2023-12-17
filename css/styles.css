@@ -45,10 +45,8 @@ body {
 	color: var(--text-color);
     background-color: var(--background-color);
     margin: 0;
-	overflow: hidden;
-
 	transition: color 0.15s ease-out, background 0.15s ease-out;
-
+	overflow: hidden;
 	user-select: none;
 	-ms-user-select: none;
 	-moz-user-select: none;
@@ -66,19 +64,18 @@ button {
 	padding: 3px 5px;
 	margin: 4px;
 	font-family: inherit;
-	background-color: var(--background-color);
 	color: inherit;
+	background-color: var(--background-color);
 	border: none;
 	border-radius: 80px;
-	cursor: pointer;
-
 	transition: color 0.15s ease-out, background 0.15s ease-out;
+	cursor: pointer;
 }
 
 /* Scroll Bar */
 
 ::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -101,14 +98,14 @@ button {
 	position: fixed;
 	top: 3%;
 	left: 2.5%;
-	z-index: 20;
+	z-index: 30;
 }
 
 .top-right {
 	position: fixed;
 	top: 3%;
 	right: 2.5%;
-	z-index: 20;
+	z-index: 30;
 }
 
 /* Options Menu */
@@ -171,9 +168,9 @@ options-menu>div>ul>li#menu-export-json:before {
     content: '\F356';
 }
 
-options-menu>div>ul>li#menu-view-json:before {
+options-menu>div>ul>li#menu-togge-face-indicator:before {
     font-family: 'bootstrap-icons';
-    content: '\F341';
+    content: '\F797';
 }
 
 options-menu>div>ul>li#menu-toggle-theme:before {
@@ -183,28 +180,35 @@ options-menu>div>ul>li#menu-toggle-theme:before {
 
 /* Start View */
 
+start-view {
+    position: absolute;
+    top: 25%;
+    right: 30%;
+    display: block;
+    width: 40%;
+	height: 60%;
+}
+
 start-view>h1 {
-	position: absolute;
-	top: 25%;
-	width: 100%;
+	position: relative;
+	font-size: 2em;
+	margin-bottom: 1em;
 }
 
 start-view>div {
-	position: absolute;
-	top: 38%;
-	left: 25%;
-	width: 50%;
-	height: 60%;
-	box-sizing: border-box;
-	overflow-y: scroll;
+	position: relative;
+	width: 100%;
+    height: 100%;
+    overflow-y: auto;
 }
 
 start-view>div>button {
-	height: 23%;
-	width: 100%;
+	position: relative;
+	height: 13%;
+	width: 50%;
 	padding: 0;
-	margin: 0;
-	margin-bottom: 3%;
+	margin: 0 25%;
+	margin-bottom: 2%;
 	background-color: var(--primary-dark-color);
 }
 
@@ -212,12 +216,12 @@ start-view>div>button {
 
 .view-nav-btn {
 	position: absolute;
+	top: 45%;
+	z-index: 10;
 	width: 50px;
 	height: 10%;
-	top: 45%;
 	background-color: var(--primary-dark-color);
 	border-radius: 20px;
-	z-index: 10;
 	transition: opacity 0.6s ease-out 1s, color 0.15s ease-out, background 0.15s ease-out;
 }
 
@@ -235,4 +239,26 @@ start-view>div>button {
 
 .view-nav-btn#next-view-btn {
 	right: 2%;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 700px), (min-aspect-ratio: 100/40) {
+
+	screen-warning {
+		position: fixed;
+		z-index: 9999;
+		display: flex;
+		width: 100dvw;
+		height: 100dvh;
+		font-weight: bold;
+		justify-content: center;
+		align-items: center;
+		backdrop-filter: blur(10px);
+	}
+
+	screen-warning:before {
+		content: "Screen too small";
+	}
+
 }
