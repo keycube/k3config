@@ -4,6 +4,7 @@ There is currently two majors ways to configure a QMK keyboard :
 
 ## Manually flashing the keyboard :
 In order to flash the keyboard we have to first generate / build the corresponding firmware with our custom keymap defined inside of it.
+
 Once the firmware is built we can then put the keyboard in bootloader mode and flash it (using QMK toolbox or by CLI | see https://docs.qmk.fm/#/newbs_flashing) in order to write the generated firmware inside of it.
 
 **pros** :
