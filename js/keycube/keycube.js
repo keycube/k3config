@@ -1,8 +1,8 @@
 const keycubeFaces = {
 	'north-layers' : 'north-layers' ,
-	'west-layers'  : 'west-layers'  ,
+	'west-layers'  : 'west-layers'	,
 	'middle-layers': 'middle-layers',
-	'east-layers'  : 'east-layers'  ,
+	'east-layers'  : 'east-layers'	,
 	'south-layers' : 'south-layers'
 }
 
@@ -111,7 +111,7 @@ const KeycubeLayout =
 			}
 
 			if (typeof(jsonObject['keycube-id']) !== 'string'
-			||  jsonObject['keycube-id'] !== this['keycube-id']) {
+			||	jsonObject['keycube-id'] !== this['keycube-id']) {
 				throw Error('Invalid Keycube Id');
 			}
 		}
@@ -129,7 +129,7 @@ const KeycubeLayout =
 
 		for (let face in jsonObject) {
 			if (!(face in keycubeFaces)
-			||  !(Array.isArray(jsonObject[face]))) {
+			||	!(Array.isArray(jsonObject[face]))) {
 				continue;
 			}
 
@@ -140,7 +140,7 @@ const KeycubeLayout =
 
 				for (let key in jsonObject[face][layer]) {
 					if (typeof(jsonObject[face][layer][key]) !== 'string'
-					||  jsonObject[face][layer][key].length <= 0) {
+					||	jsonObject[face][layer][key].length <= 0) {
 						continue;
 					}
 
@@ -176,10 +176,10 @@ const KeycubeLayout =
 
 	editKey: function (face, layer, key, code) {
 		if (!KeycubeLayout.isPrototypeOf(this)
-		||  typeof(face)  !== 'string'
-		||  typeof(layer) !== 'number'
-		||  typeof(key)   !== 'number'
-		||  typeof(code)  !== 'string') {
+		||	typeof(face)  !== 'string'
+		||	typeof(layer) !== 'number'
+		||	typeof(key)	  !== 'number'
+		||	typeof(code)  !== 'string') {
 			return false;
 		}
 
@@ -191,7 +191,7 @@ const KeycubeLayout =
 
 		if (!(face in keycubeFaces)
 		|| layer < 0 || layer >= this[face].length
-		|| key   < 0 || key   >= this[face][layer].length) {
+		|| key	 < 0 || key	  >= this[face][layer].length) {
 			return false;
 		}
 
@@ -232,139 +232,3 @@ const KeycubeLayout =
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var test_overwrite_json = `{
-	\"version\": 1,
-	\"name\": \"Overwritten Keycube 3x3 configuration\",
-	\"description\": \"This was overwritten\",
-	\"keycube-id\": \"keycube_3x3\",
-	\"north-layers\": [
-		[ \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\" ],
-		[ \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\" ],
-		[ \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\" ],
-		[ \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\" ]
-	],
-	\"west-layers\": [
-		[ \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\" ],
-		[ \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\" ],
-		[ \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\" ],
-		[ \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\" ]
-	],
-	\"middle-layers\": [
-		[ \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\" ],
-		[ \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\" ],
-		[ \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\" ],
-		[ \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\" ]
-	],
-	\"east-layers\": [
-		[ \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\" ],
-		[ \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\" ],
-		[ \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\" ],
-		[ \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\" ]
-	],
-	\"south-layers\": [
-		[ \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\" ],
-		[ \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\", \"KC_F\" ],
-		[ \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\", \"KC_G\" ],
-		[ \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\", \"KC_H\" ]
-	]
-}`
-
-var test_overwrite_description_json = `{
-	\"version\": 1,
-	\"name\": \"Overwritten Keycube 3x3 configuration\",
-	\"description\": \"This was overwritten\",
-	\"keycube-id\": \"keycube_3x3\"
-}`
-
-var test_overwrite_last_layer_json = `{
-	\"version\": 1,
-	\"name\": \"Overwritten Keycube 3x3 configuration\",
-	\"description\": \"This was overwritten\",
-	\"keycube-id\": \"keycube_3x3\",
-	\"north-layers\": [
-		[],
-		[],
-		[],
-		[ \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\", \"KC_A\" ]
-	],
-	\"west-layers\": [
-		[],
-		[],
-		[],
-		[ \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\", \"KC_B\" ]
-	],
-	\"middle-layers\": [
-		[],
-		[],
-		[],
-		[ \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\", \"KC_C\" ]
-	],
-	\"east-layers\": [
-		[],
-		[],
-		[],
-		[ \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\", \"KC_D\" ]
-	],
-	\"south-layers\": [
-		[],
-		[],
-		[],
-		[ \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\", \"KC_E\" ]
-	]
-}`
-
-var test_overwrite_last_key_json = `{
-	\"version\": 1,
-	\"name\": \"Overwritten Keycube 3x3 configuration\",
-	\"description\": \"This was overwritten\",
-	\"keycube-id\": \"keycube_3x3\",
-	\"north-layers\": [
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ]
-	],
-	\"west-layers\": [
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ]
-	],
-	\"middle-layers\": [
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ]
-	],
-	\"east-layers\": [
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ]
-	],
-	\"south-layers\": [
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ],
-		[ 0, 0, 0, 0, 0, 0, 0, 0, \"KC_ENTER\" ]
-	]
-}`

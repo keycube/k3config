@@ -31,14 +31,14 @@ const OptionsMenu = {
 /* Import Keycube Config from Json */
 
 function importKeycubeLayout() {
-    let element = document.createElement('input');
+	let element = document.createElement('input');
 
 	element.display = 'none';
-    element.setAttribute('type', 'file');
+	element.setAttribute('type', 'file');
 	element.setAttribute('accept', '.json');
 
-    document.body.appendChild(element);
-    element.click();
+	document.body.appendChild(element);
+	element.click();
 
 	element.addEventListener('change', (event) => {
 		let fileList = event.target.files;
@@ -69,7 +69,7 @@ function importKeycubeLayout() {
 /* Export Keycube Config to Json */
 
 function exportKeycubeLayout() {
-    let element = null;
+	let element = null;
 
 	if (!KeycubeLayout.isPrototypeOf(loadedLayout)) {
 		return;
@@ -77,14 +77,14 @@ function exportKeycubeLayout() {
 
 	element = document.createElement('a');
 	element.display = 'none';
-    element.setAttribute('href',
+	element.setAttribute('href',
 						 'data:application/json;'
 						 + 'charset=utf-8,'
 						 + encodeURIComponent(loadedLayout.exportJson()));
 	element.setAttribute('download', loadedLayout.name);
 
-    document.body.appendChild(element);
-    element.click();
+	document.body.appendChild(element);
+	element.click();
 	document.body.removeChild(element);
 }
 
@@ -92,7 +92,7 @@ function exportKeycubeLayout() {
 function toggleFaceIndicator() {
 
 	if (typeof(KeycubeNet) == 'object'
-	&&  typeof(KeycubeNet.toggleFaceIndicator) == 'function') {
+	&&	typeof(KeycubeNet.toggleFaceIndicator) == 'function') {
 		KeycubeNet.toggleFaceIndicator();
 	}
 }
@@ -100,11 +100,11 @@ function toggleFaceIndicator() {
 /* Load & toggle Theme */
 
 function loadTheme() {
-    let theme = localStorage.getItem('theme');
+	let theme = localStorage.getItem('theme');
 
-    if (theme) {
-        document.documentElement.setAttribute('theme', theme);
-    }
+	if (theme) {
+		document.documentElement.setAttribute('theme', theme);
+	}
 	else {
 		document.documentElement.setAttribute('theme', 'dark');
 	}

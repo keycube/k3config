@@ -39,12 +39,12 @@
 /* General */
 
 body {
-    width: 100svw;
-    height: 100svh;
+	width: 100svw;
+	height: 100svh;
 	font-family: var(--primary-font);
 	color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
+	background-color: var(--background-color);
+	margin: 0;
 	transition: color 0.15s ease-out, background 0.15s ease-out;
 	overflow: hidden;
 	user-select: none;
@@ -159,33 +159,33 @@ options-menu>div>ul>li:before {
 }
 
 options-menu>div>ul>li#menu-import-json:before {
-    font-family: 'bootstrap-icons';
-    content: '\F358';
+	font-family: 'bootstrap-icons';
+	content: '\F358';
 }
 
 options-menu>div>ul>li#menu-export-json:before {
-    font-family: 'bootstrap-icons';
-    content: '\F356';
+	font-family: 'bootstrap-icons';
+	content: '\F356';
 }
 
 options-menu>div>ul>li#menu-togge-face-indicator:before {
-    font-family: 'bootstrap-icons';
-    content: '\F797';
+	font-family: 'bootstrap-icons';
+	content: '\F797';
 }
 
 options-menu>div>ul>li#menu-toggle-theme:before {
-    font-family: 'bootstrap-icons';
-    content: '\F288';
+	font-family: 'bootstrap-icons';
+	content: '\F288';
 }
 
 /* Start View */
 
 start-view {
-    position: absolute;
-    top: 25%;
-    right: 30%;
-    display: block;
-    width: 40%;
+	position: absolute;
+	top: 25%;
+	right: 30%;
+	display: block;
+	width: 40%;
 	height: 60%;
 }
 
@@ -198,8 +198,8 @@ start-view>h1 {
 start-view>div {
 	position: relative;
 	width: 100%;
-    height: 100%;
-    overflow-y: auto;
+	height: 100%;
+	overflow-y: auto;
 }
 
 start-view>div>button {

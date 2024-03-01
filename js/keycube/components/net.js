@@ -59,7 +59,7 @@ const KeycubeNet =
 
 					for (let key = 0; key < keyElements.length; key++) {
 						if (key >= this.keycubeLayout[face][this.keycubeLayout.activeLayer].length) {
-	 						continue;
+							continue;
 						}
 
 						keyElements[key].textContent = getKeycodeRepresentationByCode(this.keycubeLayout[face][this.keycubeLayout.activeLayer][key]);

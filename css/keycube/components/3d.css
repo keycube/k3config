@@ -13,7 +13,7 @@ keycube-3d {
 	width: 100%;
 	aspect-ratio: 1 / 1;
 	font-family: var(--keycube-3d-font);
-    text-align: center;
+	text-align: center;
 	color: var(--keycube-3d-text-color);
 	background-color: var(--keycube-3d-background-color);
 	transform: translate(-50%, -50%);
